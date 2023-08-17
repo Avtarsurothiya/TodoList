@@ -52,3 +52,9 @@ function deleteTask(e) {
     e.parentElement.remove(); //getting parent element and remove it
     allTasks();
   }
+
+  //Implementing Clear All functionality
+clearButton.addEventListener("click", () => {
+    todoLists.innerHTML = "";
+    allTasks();
+  });

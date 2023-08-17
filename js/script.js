@@ -21,7 +21,7 @@ const inputField = document.querySelector(".input-field textarea"),
   }
 
   //Adding task with Enter Key
-  
+
 inputField.addEventListener("keyup", (e) => {
     let inputVal = inputField.value.trim(); //trim fuction removes space of front and back of the inputed value
   
@@ -39,3 +39,16 @@ inputField.addEventListener("keyup", (e) => {
     }
   });
   
+  //Task completion Check box
+  function handleStatus(e) {
+    const checkbox = e.querySelector("input"); //getting checkbox
+    checkbox.checked = checkbox.checked ? false : true;
+    e.classList.toggle("pending");
+    allTasks();
+  }
+
+  //Implementing delete task with delete button
+function deleteTask(e) {
+    e.parentElement.remove(); //getting parent element and remove it
+    allTasks();
+  }
